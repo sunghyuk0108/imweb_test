@@ -9,11 +9,13 @@ function modalOpen(num) {
     return function () {
         conTents[num].onclick = function () {
             moDals[num].style.display = "block";
+            document.body.classList.add("stop-scroll");
             console.log(num);
         };
 
         moDalCloseBt[num].onclick = function () {
             moDals[num].style.display = "none";
+            document.body.classList.remove("stop-scroll");
         };
     };
 };
